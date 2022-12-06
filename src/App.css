@@ -1,0 +1,279 @@
+html {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #264653;
+  color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 1.6rem;
+
+}
+
+small {
+  font-size: 1.2rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 5px;
+  
+}
+
+.title {
+  font-size: 3.3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#startShow  {
+  font-size: 30px;
+  line-height: 1.3;
+  position: relative;
+  animation: heading;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes heading {
+  0%   {top: -100px;}
+  50% {top: 140px;}
+  100% {top: 10px;}
+}
+
+
+#content {
+  position: relative;
+  animation-name: content;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes content {
+  0%   {left: -1000px; opacity:0; }
+  50%   { opacity:0.5; }
+  100% {left: 0; opacity: 1;}
+}
+
+.section {
+  
+  justify-content: center;
+  align-items: center;
+}
+.form-control {
+  display: grid;
+  
+}
+
+.form-label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  
+}
+
+.form-input {
+  font-size: 1.8rem;
+  padding: 0.5rem 2rem ;
+  border-radius: 20px;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  border-style: none;
+  
+  
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+  border: 0px solid white;
+  outline:none;
+}
+
+.form-button {
+  background-color: orange;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  border-radius:20px;
+  cursor: pointer;
+  transition: background-color 250ms;
+  border-style: none;
+  transition: width 0.5s;
+  width: 80px;
+}
+
+.form-button:hover {
+  background-color: rgb(0,0,0,0.9);
+  width: 110px;
+}
+
+.card-list {
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.card-flip {
+  
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #312f2f;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.card-flip:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+/* Style the front side (fallback if image is missing) */
+.card-front {
+  background-color: rgb(7, 7, 7);
+  color: black;
+  padding: 1rem;
+  
+}
+
+/* Style the back side */
+.card-back {
+  background-color: rgb(7, 7, 7);
+  color: white;
+  transform: rotateY(180deg);
+  margin:0 auto;
+  overflow: scroll;
+}
+
+textarea {
+  /* rows:5; */
+  text-align: left;
+  height: 150px;
+  width: 90%;
+}
+.overview {
+
+  text-align: left;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  
+
+}
+@media(min-width: 700px) {
+
+.form-control {
+  grid-template-columns: auto 1fr auto;
+  grid-gap:1rem;
+  align-items: center;
+}
+.form-input {
+  margin-bottom: 0;
+}
+
+}
+
+/* @media (max-width: 800px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+
+
+@media (max-width: 800px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+   
+.form-control {
+  grid-template-columns: 1fr;
+  grid-gap:1rem;
+  align-items: center;
+}
+.form-button {
+  margin: 0 auto;
+}
+
+}
+
+@media (max-width: 512px) {
+
+  .card-list {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  align-items: center;
+  }
+
+  
+.form-control {
+  grid-template-columns: 1fr;
+  grid-gap:1rem;
+  align-items: center;
+}
+.form-button {
+  margin: 0 auto;
+}
+
+/* 
+  
+.form-control {
+  grid-template-columns: 1fr;
+  grid-gap:1rem;
+  align-items: center;
+}
+.form-button {
+  margin: 0 auto;
+} */
+
+
+
+
+}
