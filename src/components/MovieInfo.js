@@ -10,7 +10,7 @@ const MovieInfo = ( { movie }  ) => {
             <div className='card-inner'>   
                 <div className='card-front'>   
 
-                    <img src={ postPath  } alt={movie.title}     />
+                    <img src={ postPath  } alt={movie.title} />
 
                 </div>
                 <div className='card-back'>
@@ -28,4 +28,4 @@ const MovieInfo = ( { movie }  ) => {
     )
 }
 
-export default MovieInfo
+export default MovieInfo;

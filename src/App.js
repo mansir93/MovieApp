@@ -8,7 +8,7 @@ const App = () => {
 
   return (
 
-    <div   className='container'>
+    <div className='container'>
       
       <h1  className='title' id='startShow'>Mansir_Movie_Search</h1>
 

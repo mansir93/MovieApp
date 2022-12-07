@@ -4,7 +4,6 @@ import MovieInfo from './MovieInfo';
 
 
 
-
 const SearchMovie = () => {
 
     const [ query, setQuery ] = useState('');
@@ -41,9 +40,10 @@ const SearchMovie = () => {
             <form  className='form-control'  onSubmit={ getMovies }>
 
                 <label className='form-label'>MOVIE NAME</label>
-                <input className='form-input' type='text' name='query' required 
-                       onChange={ e => setQuery( e.target.value )   } />
-                <button className='form-button' type='submit'  >Search</button>
+
+                <input className='form-input' type='text' name='query' required onChange={ e => setQuery( e.target.value ) } />
+
+                <button className='form-button' type='submit'>Search</button>
 
             </form>
 
@@ -64,10 +64,4 @@ const SearchMovie = () => {
     )
 }
 
-export default SearchMovie
-
-/*  
-
-{popularity: 27.488, vote_count: 2488, video: false, poster_path: "/vPG2zEKPXhovPW9S91SRnwr5JM1.j
-
-*/ 
+export default SearchMovie;
